@@ -1,0 +1,20 @@
+.cabelProduct {
+	max-width: 1900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1440px) {
+    .cabelProduct {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cabelProduct {
+        padding: 10px;
+    }
+} 

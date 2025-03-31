@@ -1,0 +1,52 @@
+.deliveryForm {
+	background: #2A9E44;
+	padding: 30px;
+	border-radius: 8px;
+	width: 100%;
+ }
+ 
+ .deliveryForm h2 {
+	font-size: 24px;
+	color: #333;
+	margin-bottom: 25px;
+	text-align: center;
+	color: white;
+ }
+ 
+ .formFields {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+ }
+ 
+ .input {
+	width: 100%;
+	padding: 12px 15px;
+	border: 1px solid white;
+	border-radius: 4px;
+	font-size: 16px;
+	color: white;
+	background: transparent;
+ }
+ .input::placeholder {
+	color: white;
+ }
+ .input:focus {
+	outline: none;
+	border-color: #28a745;
+ }
+ 
+ .submitButton {
+	background: white;
+	color: #28a745;
+	border: none;
+	padding: 12px 25px;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+ }
+ 
+ .submitButton:hover {
+	background: #218838;
+ }

@@ -1,0 +1,60 @@
+/* Основной контейнер */
+.main-pluses {
+	padding: 0 20px;
+	margin-bottom: 40px;
+ }
+ 
+ /* Обертка для заголовка и карточек */
+ .pluses-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 47px;
+ }
+ 
+ /* Заголовок */
+ .pluses-title {
+	font-size: 45px;
+	font-weight: bold;
+ }
+ 
+ /* Сетка карточек */
+ .pluses-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+	justify-content: center;
+ }
+ 
+ /* Карточка */
+ .card {
+	display: flex;
+	padding: 39px 20px;
+	flex-direction: column;
+	align-items: start;
+	gap: 27px;
+	background: #f1f1f1;
+ }
+ 
+ /* Иконка карточки */
+ .card-icon {
+	width: 58px;
+	height: 58px;
+ }
+ 
+ /* Контейнер текста в карточке */
+ .card-content {
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+ }
+ 
+ /* Заголовок карточки */
+ .card-title {
+	font-size: 20px;
+	font-weight: bold;
+ }
+ 
+ /* Текст карточки */
+ .card-text {
+	font-size: 13px;
+ }

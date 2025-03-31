@@ -1,0 +1,325 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+.closeButton {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 5px;
+    line-height: 1;
+}
+
+.closeButton:hover {
+    color: #333;
+}
+
+.modalContent h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.amount span {
+    color: #666;
+}
+
+.amount strong {
+    font-size: 20px;
+    color: #2A9E44;
+}
+
+.paymentMethods {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.paymentMethod {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.paymentMethod:hover {
+    border-color: #2A9E44;
+    background: #f8f8f8;
+}
+
+.paymentMethod.selected {
+    border-color: #2A9E44;
+    background: rgba(42, 158, 68, 0.05);
+}
+
+.methodIcon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2A9E44;
+}
+
+.methodIcon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.methodInfo h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.methodInfo p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 15px;
+    background: #2A9E44;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+    background: #238a3a;
+}
+
+.submitButton:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.cardForm {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    animation: fadeIn 0.3s ease;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #2A9E44;
+}
+
+.formRow {
+    display: flex;
+    gap: 15px;
+}
+
+.formRow .formGroup {
+    flex: 1;
+}
+
+/* Стили для полей с ошибками */
+.formGroup.error input {
+    border-color: #ff4444;
+}
+
+.formGroup.error label {
+    color: #ff4444;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalContent {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .modalContent h2 {
+        font-size: 20px;
+    }
+
+    .amount {
+        font-size: 16px;
+    }
+
+    .paymentMethod {
+        padding: 15px;
+    }
+
+    .methodIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .methodInfo h3 {
+        font-size: 14px;
+    }
+
+    .methodInfo p {
+        font-size: 12px;
+    }
+
+    .formRow {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .formGroup input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .banksList {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .bankOption {
+        padding: 10px;
+    }
+
+    .bankLogo {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 8px;
+    }
+
+    .bankName {
+        font-size: 12px;
+    }
+}
+
+.banksList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    animation: fadeIn 0.3s ease;
+}
+
+.bankOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bankOption:hover {
+    border-color: #2A9E44;
+    background: #f8f8f8;
+    transform: translateY(-2px);
+}
+
+.bankOption.selected {
+    border-color: #2A9E44;
+    background: rgba(42, 158, 68, 0.05);
+}
+
+.bankLogo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bankLogo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.bankName {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    font-weight: 500;
+} 

@@ -1,0 +1,33 @@
+.productContainer {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	margin-bottom: 45px;
+ }
+ 
+ .product-image {
+ }
+ 
+ .product-label {
+	font-size: 18px;
+	line-height: 120%;
+ }
+ .productCards{
+	padding:0 84px ;
+	 display:flex;
+	 width:100%;
+	 justify-content:space-between;
+ }
+ @media (max-width:900px) {
+	.productCards{
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+	}
+ }
+ @media (max-width:600px) {
+	.productCards{
+		display: flex;
+		flex-direction: column;
+	}
+ }

@@ -1,0 +1,13 @@
+# Разрешаем индексацию всем роботам
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию служебных страниц
+Disallow: /404
+Disallow: /500
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+
+# Путь к карте сайта
+Sitemap: https://kabelniy-opt.ru/sitemap.xml 

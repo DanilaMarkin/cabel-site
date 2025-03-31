@@ -1,0 +1,182 @@
+.buyers {
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumbs {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: #2a9e44;
+}
+
+.breadcrumbs span {
+    margin: 0 8px;
+}
+
+.title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.buyersContent {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.section {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.stepNumber {
+    width: 30px;
+    height: 30px;
+    background: #2a9e44;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.stepContent h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.stepContent p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.paymentMethods,
+.deliveryInfo,
+.guarantees {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.paymentMethod,
+.deliveryMethod,
+.guarantee {
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+}
+
+.paymentMethod h3,
+.deliveryMethod h3,
+.guarantee h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.paymentMethod p,
+.deliveryMethod p,
+.guarantee p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faqItem {
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+}
+
+.faqItem h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faqItem p {
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .paymentMethods,
+    .deliveryInfo,
+    .guarantees {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .paymentMethods,
+    .deliveryInfo,
+    .guarantees {
+        grid-template-columns: 1fr;
+    }
+} 

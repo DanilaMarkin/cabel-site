@@ -1,0 +1,53 @@
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.actions:hover {
+    color: #2a9e44;
+}
+
+.actions img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.actions span {
+    font-size: 14px;
+    line-height: 130%;
+}
+
+.iconWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #2A9E44;
+    color: white;
+    font-size: 12px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+@media (max-width: 768px) {
+    .actions {
+        display: none;
+    }
+} 

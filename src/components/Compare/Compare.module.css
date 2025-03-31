@@ -1,0 +1,263 @@
+.compare {
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumbs {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumbs a:hover {
+    color: #2A9E44;
+}
+
+.breadcrumbs span {
+    margin: 0 8px;
+}
+
+.compareHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.compareHeader h1 {
+    font-size: 32px;
+    color: #333;
+}
+
+.compareActions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.clearAll {
+    padding: 8px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clearAll:hover:not(:disabled) {
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+.clearAll:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.displayToggle label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.emptyCompare {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.emptyCompare p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.continueShopping {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #2A9E44;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.continueShopping:hover {
+    background: #238a3a;
+}
+
+.compareTable {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.compareColumn {
+    min-width: 250px;
+    flex-shrink: 0;
+}
+
+.columnHeader {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.productImage {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.productImage img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.productImage img:hover {
+    transform: scale(1.05);
+}
+
+.columnHeader h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 20px;
+    color: #2A9E44;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.productActions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.addToCart,
+.removeFromCompare {
+    padding: 8px 16px;
+    border: 1px solid #2A9E44;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.addToCart {
+    background: #2A9E44;
+    color: white;
+}
+
+.addToCart:hover {
+    background: #238a3a;
+}
+
+.removeFromCompare {
+    background: white;
+    color: #2A9E44;
+}
+
+.removeFromCompare:hover {
+    background: #ff4444;
+    border-color: #ff4444;
+    color: white;
+}
+
+.characteristics {
+    margin-top: 20px;
+}
+
+.characteristicRow {
+    padding: 12px;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1px;
+}
+
+.characteristicRow:last-child {
+    margin-bottom: 0;
+}
+
+.addProduct {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.addButton:hover {
+    color: #2A9E44;
+}
+
+.addButton span:first-child {
+    font-size: 32px;
+}
+
+@media (max-width: 768px) {
+    .compare {
+        padding: 20px 0;
+    }
+
+    .compareHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .compareHeader h1 {
+        font-size: 24px;
+    }
+
+    .compareActions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .compareColumn {
+        min-width: 200px;
+    }
+
+    .productImage {
+        width: 150px;
+        height: 150px;
+    }
+} 

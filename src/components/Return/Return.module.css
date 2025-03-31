@@ -1,0 +1,191 @@
+.return {
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumbs {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.breadcrumbs span:last-child {
+    color: #2a9e44;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.returnContent {
+
+}
+
+.description {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.returnSection {
+    margin-bottom: 40px;
+}
+
+.returnSection h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.returnList {
+    list-style: none;
+    padding: 0;
+}
+
+.returnList > li {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.returnList h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.returnList p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.returnList ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: #666;
+}
+
+.returnList ul li {
+    margin-bottom: 8px;
+}
+
+.returnProcess {
+    margin: 40px 0;
+}
+
+.returnProcess h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.processList {
+    list-style: none;
+    padding: 0;
+    counter-reset: process-counter;
+}
+
+.processList > li {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    position: relative;
+    padding-left: 50px;
+}
+
+.processList > li::before {
+    counter-increment: process-counter;
+    content: counter(process-counter);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 24px;
+    height: 24px;
+    background-color: #2a9e44;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.note {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #fff7e6;
+    border-radius: 8px;
+}
+
+.note h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.note p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.support {
+    margin-top: 40px;
+    text-align: center;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.support p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.contactInfo {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contactInfo p {
+    margin: 0;
+    color: #333;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .returnList > li,
+    .processList > li {
+        padding: 15px;
+    }
+
+    .processList > li {
+        padding-left: 45px;
+    }
+
+    .contactInfo {
+        flex-direction: column;
+        gap: 10px;
+    }
+} 

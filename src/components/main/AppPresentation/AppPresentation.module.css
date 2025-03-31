@@ -1,0 +1,72 @@
+.presentation {
+	background-image: url("/img/Presentation.png");
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	margin-bottom: 90px;
+}
+
+.presentation_container {
+	padding: 0 20px;
+}
+
+.presentation_content {
+	display: flex;
+
+	padding: 85px 0;
+}
+
+.presentation_text {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	gap: 45px;
+}
+
+.presentation_title h2 {
+	color: #FFF;
+	font-size: 45px;
+	line-height: 130%;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.presentation_adv {
+	font-size: 18px;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	gap: 25px;
+	position: relative;
+
+}
+
+.presentation_adv span {
+	display: inline-flex;
+	align-items: center;
+	gap: 20px;
+	color: #FFF;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+}
+
+.presentation_adv span::before {
+	content: "";
+	position: relative;
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-radius: 600px;
+	background-color: #2A9E44;
+	left: 4px;
+}
+
+.presentation_button button {
+	border-radius: 5px;
+	background-color: #2A9E44;
+	color: white;
+	padding: 15.5px 83.5px;
+}

@@ -1,0 +1,36 @@
+/* Основной контейнер */
+.container {
+	padding: 0 20px;
+	margin-bottom: 40px;
+ }
+ 
+ /* Обертка для контента */
+ .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 45px;
+	justify-content: start;
+ }
+ 
+ /* Заголовок */
+ .title {
+	font-size: 45px;
+	font-weight: bold;
+	text-align: start;
+ }
+ 
+ /* Сетка для карточек */
+ .grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	gap: 20px;
+ }
+ @media (max-width:700px) {
+	.grid{
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.title {
+		font-size: 30px;
+	}
+ }

@@ -1,0 +1,233 @@
+.header{
+	padding: 18px;
+	padding-bottom: 10px;
+	
+}
+.header_content{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap:10px;
+}
+.header_logo{
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 120%;
+}
+.header_serchCatal{
+	display: flex;
+	gap:2rem;
+}
+.header_catalog {
+	display: flex;
+	align-items: center;
+	
+ }
+ 
+ .header_catalog button {
+	padding: 0.5rem;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	gap: 10px; /* Расстояние между бургером и текстом */
+	background: #2A9E44;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+	color:white
+ }
+.burger {
+	
+	position: relative;
+	width: 30px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+ }
+ 
+ /* Основная линия */
+ .burger span {
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: white;
+	border-radius: 4px;
+ }
+ 
+ /* Верхняя и нижняя линии */
+ .burger::before,
+ .burger::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: white;
+	border-radius: 4px;
+ }
+ 
+ /* Позиционирование верхней и нижней линий */
+ .burger::before {
+	top: 0;
+ }
+ 
+ .burger::after {
+	bottom: 0;
+ }
+ .header_search {
+	display: flex;
+	align-items: center;
+	border: 2px solid #4CAF50; /* Зелёная рамка */
+	border-radius: 8px;
+	overflow: hidden;
+	width: 100%; /* Можно изменить в зависимости от макета */
+	max-width: 600px; /* Максимальная ширина */
+ }
+ 
+ /* Стили для поля ввода */
+ .header_search input {
+	flex: 1;
+	padding: 10px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	color: #333;
+ }
+ 
+ /* Стили для кнопки */
+ .header_search button {
+	background-color: #4CAF50; /* Зелёный цвет */
+	border: none;
+	padding: 15px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+ }
+ 
+ /* Иконка внутри кнопки */
+ .header_search button img {
+	width: 16px; /* Размер иконки */
+	height: 16px;
+ }
+ .header_actions{
+	display: flex;
+	align-items: end;
+	gap:1rem;
+ }
+ .header_serchCatal{
+	width:60vw;
+	align-items: center;
+	justify-content: center;
+ }
+ @media (max-width:1180px) {
+	.header_actions{
+		display: none;
+	}
+	.header_content{
+		justify-content: start;
+	}
+	.header_catalog{
+		display:none;
+	}
+ }
+ @media (max-width:1100px) {
+	.header_serchCatal{
+		align-items: start;
+		justify-content: start;
+	}
+ }
+ @media (max-width:900px) {
+	.header_content{
+		flex-direction: column;
+		align-items: start;
+	}
+	.header_serchCatal{
+		width: 100%;
+	}
+ }
+
+/* Контейнер для поиска с возможностью позиционирования выпадающего списка */
+.header_search_container {
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* Стили для выпадающего списка результатов */
+.search_results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #dfdfdf;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Стили для элемента результата поиска */
+.search_result_item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search_result_item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Стили для изображения товара */
+.result_item_image {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result_item_image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Стили для информации о товаре */
+.result_item_info {
+    flex-grow: 1;
+}
+
+.result_item_name {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.result_item_price {
+    font-weight: bold;
+    color: #2A9E44;
+    font-size: 14px;
+}
+
+/* Стили для кнопки "Показать все результаты" */
+.search_all_results {
+    padding: 12px 15px;
+    text-align: center;
+    background-color: #f9f9f9;
+    font-weight: 500;
+    color: #2A9E44;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search_all_results:hover {
+    background-color: #f0f0f0;
+}

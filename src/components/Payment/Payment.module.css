@@ -1,0 +1,136 @@
+.payment {
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.container {
+	width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumbs {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.paymentContent {
+    
+}
+
+.description {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.paymentMethods {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.paymentMethods li {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.paymentMethods h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.paymentMethods p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.legalPayment {
+    margin: 40px 0;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.legalPayment h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.legalPayment ul {
+    list-style: none;
+    padding: 0;
+}
+
+.legalPayment li {
+    margin-bottom: 20px;
+}
+
+.paymentSystems {
+    margin: 40px 0;
+}
+
+.paymentSystems h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.paymentIcons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.paymentIcon {
+    padding: 15px 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    font-weight: 500;
+}
+
+.note {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #fff7e6;
+    border-radius: 8px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.support {
+    color: #666;
+    text-align: center;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .paymentIcons {
+        gap: 10px;
+    }
+
+    .paymentIcon {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+} 
