@@ -11,13 +11,13 @@ import { useShop, Product } from '../../../context/ShopContext';
 
 export default function Header() {
 	const navigate = useNavigate();
-	const { searchProducts, demoProducts } = useShop();
+	const { searchProducts } = useShop();
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 	const [searchValue, setSearchValue] = useState('');
 	const [showResults, setShowResults] = useState(false);
 	const [searchResults, setSearchResults] = useState<Product[]>([]);
 	const searchRef = useRef<HTMLDivElement>(null);
-	
+
 	useEffect(() => {
 		function handleResize() {
 			setWindowWidth(window.innerWidth);
@@ -41,32 +41,35 @@ export default function Header() {
 		};
 	}, [searchRef]);
 
-	// Фильтрация товаров при вводе текста
+	// Функция для поиска продуктов через API
+	const fetchSearchResults = async (query: string) => {
+		try {
+			const response = await fetch(`http://45.12.75.54:5000/api/products?search=${query}&limit=5`);
+			if (!response.ok) {
+				console.error('Ошибка при запросе к API');
+				return;
+			}
+			const data = await response.json();
+			setSearchResults(data.products.slice(0, 5)); // Ограничиваем 5 результатами
+		} catch (error) {
+			console.error('Ошибка при получении данных из API:', error);
+		}
+	};
+
+	// Фильтрация товаров при изменении поиска
 	useEffect(() => {
 		if (searchValue.trim() === '') {
 			setSearchResults([]);
 			setShowResults(false);
 			return;
 		}
-		
+
 		// Установим showResults в true когда есть текст для поиска
 		setShowResults(true);
-		
-		// Проверим, существует ли demoProducts
-		if (!demoProducts || !Array.isArray(demoProducts)) {
-			console.error('demoProducts не найден или не является массивом', demoProducts);
-			return;
-		}
-		
-		try {
-			const results = demoProducts.filter(product => 
-				product.name.toLowerCase().includes(searchValue.toLowerCase())
-			);
-			setSearchResults(results.slice(0, 5)); // Максимум 5 результатов
-		} catch (error) {
-			console.error('Ошибка при фильтрации товаров:', error);
-		}
-	}, [searchValue, demoProducts]);
+
+		// Ищем товары через API
+		fetchSearchResults(searchValue);
+	}, [searchValue]);
 
 	const handleCatalogClick = () => {
 		navigate('/catalog');
@@ -84,24 +87,10 @@ export default function Header() {
 			setShowResults(true);
 		}
 	};
-	
+
 	const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
 		setSearchValue(value);
-		
-		if (value.trim().length >= 3) {
-			// Поиск товаров по запросу
-			const results = demoProducts.filter(product => 
-				product.name.toLowerCase().includes(value.toLowerCase()) ||
-				(product.manufacturer && product.manufacturer.toLowerCase().includes(value.toLowerCase())) ||
-				(product.category && product.category.toLowerCase().includes(value.toLowerCase())) ||
-				(product.article && product.article.toLowerCase().includes(value.toLowerCase()))
-			);
-			
-			setSearchResults(results);
-		} else {
-			setSearchResults([]);
-		}
 	};
 
 	const handleProductSelect = (product: Product) => {
@@ -110,12 +99,12 @@ export default function Header() {
 		navigate(`/product/${product.id}`);
 	};
 
-	return(
+	return (
 		<header className={styles.header}>
 			<div className={styles.header_container}>
 				<div className={styles.header_content}>
 					<Link to="/" className={styles.header_logo}>
-						Logo
+						<img src="/img/logo.svg" alt="Логотип Проммедь"/>
 					</Link>
 					{windowWidth < 1180 && <PhoneMap />}
 					<div className={styles.header_serchCatal}>
@@ -127,8 +116,8 @@ export default function Header() {
 						</div>
 						<div className={styles.header_search_container} ref={searchRef}>
 							<form className={styles.header_search} onSubmit={handleSearch}>
-								<input 
-									type="text" 
+								<input
+									type="text"
 									placeholder='Поиск по товарам'
 									value={searchValue}
 									onChange={handleSearchInputChange}
@@ -143,8 +132,8 @@ export default function Header() {
 									{searchResults.length > 0 ? (
 										<>
 											{searchResults.map((product) => (
-												<div 
-													key={product.id} 
+												<div
+													key={product.id}
 													className={styles.search_result_item}
 													onClick={() => handleProductSelect(product)}
 												>

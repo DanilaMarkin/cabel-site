@@ -15,10 +15,12 @@ export default function Footer() {
       <div className={styles.footer_wrapper}>
         <div className={styles.footer_content}>
           <div className={styles.footer_left}>
-            <Link to="/" className={styles.logo}>Logo</Link>
+            <Link to="/" className={styles.logo}>
+              <img src="/img/logo.svg" alt="Логотип Проммедь" />
+            </Link>
             <p className={styles.subtitle}>Интернет-магазин силовых кабелей</p>
           </div>
-          
+
           <nav className={styles.footer_nav}>
             <ul className={styles.nav_list}>
               <li><Link to="/buyers">Покупателям</Link></li>
@@ -38,7 +40,7 @@ export default function Footer() {
               <a href="tel:+7(999)999-999" className={styles.phone}>+7 (968) 462-73-64</a>
               <a href="mailto:prommedi@mail.ru" className={styles.email}>Email: prommedi@mail.ru</a>
             </div>
-            <button 
+            <button
               className={styles.button}
               onClick={scrollToTop}
               aria-label="Прокрутить страницу наверх"

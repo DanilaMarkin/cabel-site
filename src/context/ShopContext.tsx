@@ -52,6 +52,9 @@ export interface ShopContextType {
     resetFilters: () => void;
     filterOptions: FilterOptions;
     applyFilters: () => void;
+    currentPage: number;
+    totalPages: number;
+    fetchFilteredProducts: (options: FilterOptions, page?: number) => void;
     products: Product[];
 }
 
@@ -84,6 +87,9 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
     // Состояние для избранного
     const [favorites, setFavorites] = useState<FavoriteProduct[]>([]);
 
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [totalPages, setTotalPages] = useState<number>(1);
+
     // Состояние для фильтров и отфильтрованных товаров
     const [filterOptions, setFilterOptions] = useState<FilterOptions>({
         minPrice: 0,
@@ -95,12 +101,13 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
     const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/products")
+        fetch("http://45.12.75.54:5000/api/products")
             .then(res => res.json())
             .then(data => {
                 if (data.products && Array.isArray(data.products)) {
                     setProducts(data.products);
                     setFilteredProducts(data.products);
+                    setTotalPages(data.totalPages); // Получаем общее количество страниц
                 } else {
                     console.error("Ошибка: products не является массивом!", data);
                 }
@@ -135,21 +142,25 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
     };
 
 
-    const fetchFilteredProducts = async (options: FilterOptions) => {
+    const fetchFilteredProducts = async (options: FilterOptions, page: number = 1) => {
+        setCurrentPage(page); // Обновляем текущую страницу
+
         const params = new URLSearchParams({
-            page: '1',
+            page: page.toString(),
             limit: '20',
             category: options.category || '',
+            search: options.searchQuery || '', // Передаем запрос поиска в API
             sortType: options.sortType || '',  // проверяем, что сортировка действительно передается
             maxPrice: options.maxPrice ? options.maxPrice.toString() : ''
         });
-    
+
         try {
-            const res = await fetch(`http://localhost:5000/api/products?${params.toString()}`);
+            const res = await fetch(`http://45.12.75.54:5000/api/products?${params.toString()}`);
             const data = await res.json();
-    
+
             if (data.products && Array.isArray(data.products)) {
                 setFilteredProducts(data.products);  // Обновляем список товаров
+                setTotalPages(data.totalPages);  // Обновляем количество страниц
             } else {
                 console.error("Ошибка: products не является массивом!", data);
             }
@@ -157,7 +168,6 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
             console.error("Ошибка загрузки товаров:", error);
         }
     };
-    
 
     // Применение фильтров
     const applyFilters = useCallback(() => {
@@ -497,6 +507,9 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
                 resetFilters,
                 filterOptions,
                 applyFilters,
+                currentPage,
+                totalPages,
+                fetchFilteredProducts,
                 products
             }}
         >

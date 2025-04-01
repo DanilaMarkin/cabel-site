@@ -17,6 +17,8 @@ import compareIcon from '/img/header/stats.png';
 const CabelFilter: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const [pageGroup, setPageGroup] = useState(0); // Группа страниц (0 -> 1-5, 1 -> 6-10 и т. д.)
+
     const {
         filteredProducts: products,
         filterOptions,
@@ -26,8 +28,26 @@ const CabelFilter: React.FC = () => {
         addToCompare,
         addToFavorite,
         isInFavorites,
-        applyFilters
+        applyFilters,
+        currentPage,
+        totalPages,
+        fetchFilteredProducts
     } = useShop();
+
+    // Функция смены страницы
+    const changePage = (newPage: number) => {
+        if (newPage < 1 || newPage > totalPages) return;
+
+        navigate(`?page=${newPage}`); // Обновляем URL
+        fetchFilteredProducts(filterOptions, newPage); // Загружаем данные
+
+        // Обновляем группу страниц (каждые 5 страниц)
+        setPageGroup(Math.floor((newPage - 1) / 5));
+    };
+
+    // Определяем диапазон страниц
+    const startPage = pageGroup * 5 + 1;
+    const endPage = Math.min(startPage + 4, totalPages);
 
     // Локальные состояния
     const [searchValue, setSearchValue] = useState('');
@@ -36,7 +56,7 @@ const CabelFilter: React.FC = () => {
     const [showCategorySelector, setShowCategorySelector] = useState(false);
     const [isImageModalOpen, setIsImageModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState<string>('');
-    
+
     const [activeFilters, setActiveFilters] = useState({
         search: false,
         price: false,
@@ -477,9 +497,45 @@ const CabelFilter: React.FC = () => {
                             );
                         })
                     )}
-                    
+
                 </div>
             </div>
+            {/* Блок пагинации */}
+            <div className={styles.paginationContainer}>
+                {/* Кнопка "Назад" */}
+                <button
+                    onClick={() => changePage(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className={styles.pageButton}
+                >
+                    &lt;
+                </button>
+
+                {/* Отображение 5 страниц */}
+                {[...Array(endPage - startPage + 1)].map((_, index) => {
+                    const page = startPage + index;
+                    return (
+                        <button
+                            key={page}
+                            onClick={() => changePage(page)}
+                            className={`${styles.pageButton} ${currentPage === page ? styles.active : ''}`}
+                        >
+                            {page}
+                        </button>
+                    );
+                })}
+
+                {/* Кнопка "Вперед" */}
+                <button
+                    onClick={() => changePage(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className={styles.pageButton}
+                >
+                    &gt;
+                </button>
+            </div>
+            {/* Блок пагинации */}
+
 
             <ImageModal
                 isOpen={isImageModalOpen}

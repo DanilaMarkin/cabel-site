@@ -10,10 +10,16 @@
 	gap:10px;
 }
 .header_logo{
+	width: 180px;
 	font-weight: bold;
 	font-size: 40px;
 	line-height: 120%;
 }
+
+.header_logo > img{
+	width: 100%;
+}
+
 .header_serchCatal{
 	display: flex;
 	gap:2rem;

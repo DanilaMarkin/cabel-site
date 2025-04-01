@@ -22,12 +22,17 @@
 }
 
 .logo {
+	width: 180px;
 	display: block;
 	color: #2a9e44;
 	font-size: 32px;
 	font-weight: bold;
 	text-decoration: none;
 	margin-bottom: 8px;
+}
+
+.logo img {
+	width: 100%;
 }
 
 .subtitle {
