@@ -18,6 +18,15 @@
   color: #2A9E44;
 }
 
+.link {
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #666666;
+}
+
+
 .breadcrumbs span {
   margin: 0 8px;
 }

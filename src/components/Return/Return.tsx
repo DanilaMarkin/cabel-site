@@ -73,8 +73,8 @@ export default function Return() {
                             Если у вас возникли вопросы по возврату товара, пожалуйста, свяжитесь с нашей службой поддержки:
                         </p>
                         <div className={styles.contactInfo}>
-                            <p>Телефон: +7 (968) 462-73-64</p>
-                            <p>Email: prommedi@mail.ru</p>
+                        <a href="tel:+7(999)999-999" className={styles.link}>Телефон: +7 (968) 462-73-64</a>
+                        <a href="mailto:prommedi@mail.ru" className={styles.link}>Email: prommedi@mail.ru</a>
                         </div>
                     </div>
                 </div>

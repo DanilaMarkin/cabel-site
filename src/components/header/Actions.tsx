@@ -8,7 +8,7 @@ interface ActionsProps {
 }
 
 export default function Actions({ imagesrc, label }: ActionsProps) {
-	const { cartItems, compareItems } = useShop();
+	const { cartItems, compareItems, favorites } = useShop();
 
 	const getLink = (label: string) => {
 		switch (label) {
@@ -29,6 +29,8 @@ export default function Actions({ imagesrc, label }: ActionsProps) {
 				return cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
 			case "Сравнение":
 				return compareItems.length;
+			case "Отложенные":
+				return favorites.length;
 			default:
 				return 0;
 		}

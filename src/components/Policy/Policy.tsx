@@ -65,8 +65,8 @@ export default function Policy() {
         <section className={styles.section}>
           <h2>7. Контактная информация</h2>
           <p>По всем вопросам, связанным с обработкой персональных данных, вы можете обратиться к нам:</p>
-          <p>Email: prommedi@mail.ru</p>
-          <p>Телефон: +7 (968) 462-73-64</p>
+          <p>Email: <a href="mailto:prommedi@mail.ru" className={styles.link}>prommedi@mail.ru</a> </p>
+          <p>Телефон: <a href="tel:+7(999)999-999" className={styles.link}>+7 (968) 462-73-64</a> </p>
         </section>
       </div>
     </div>

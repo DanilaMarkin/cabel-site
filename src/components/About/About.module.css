@@ -92,6 +92,14 @@
   margin-right: 10px;
 }
 
+.link {
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #666666;
+}
+
 @media (max-width: 768px) {
   .about {
     padding: 20px 0;

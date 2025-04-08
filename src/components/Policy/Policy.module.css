@@ -36,6 +36,14 @@
   margin-bottom: 40px;
 }
 
+.link {
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #666666;
+}
+
 .section h2 {
   font-size: 24px;
   color: #2A9E44;

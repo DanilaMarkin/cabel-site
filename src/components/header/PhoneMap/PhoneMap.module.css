@@ -81,9 +81,15 @@
 
 /* Телефон */
 .phoneNumber {
+	cursor: pointer;
 	font-size: 16px;
 	font-weight: 500;
 	color: #333;
+	transition: color 0.2s;
+}
+
+.phoneNumber:hover {
+	color: #666666;
 }
 
 /* Кнопка */

@@ -56,7 +56,7 @@ export default function PhoneMap() {
 					</div>
 				)}
 			</div>
-			<div className={styles.phoneNumber}>+7 (968) 462-73-64</div>
+			<a href="tel:+7(968)4627364" className={styles.phoneNumber}>+7 (968) 462-73-64</a>
 
 		</div>
 	);

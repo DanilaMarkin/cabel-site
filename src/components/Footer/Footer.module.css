@@ -88,12 +88,18 @@
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: 500;
+	transition: color 0.2s;
 }
 
 .email {
 	color: #000;
 	text-decoration: none;
 	font-size: 14px;
+	transition: color 0.2s;
+}
+
+.phone:hover, .email:hover{
+	color: #666666;
 }
 
 .button {

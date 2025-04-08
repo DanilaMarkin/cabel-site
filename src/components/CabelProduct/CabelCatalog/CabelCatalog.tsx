@@ -20,37 +20,38 @@ export default function CabelCatalog() {
 			image: cabelImage,
 			label: "Кабель",
 			category: "Кабель",
-			description: "Широкий выбор кабельной продукции для различных нужд"
+			description: "Широкий выбор кабельной продукции для различных нужд",
 		},
 		{
 			image: provodImage,
 			label: "Провод",
 			category: "Провод",
-			description: "Провода различного сечения и назначения"
+			description: "Провода различного сечения и назначения",
 		},
 		{
 			image: svetImage,
 			label: "Свет",
 			category: "Свет",
-			description: "Осветительные приборы"
+			description: "Осветительные приборы",
 		},
 		{
 			image: lowVoltageImage,
 			label: "Низковольтное оборудование",
 			category: "Низковольтное оборудование",
-			description: "Надежное оборудование"
+			description: "Надежное оборудование",
 		},
 		{
 			image: image2,
 			label: "Системы безопасности",
 			category: "Системы безопасности",
-			description: "Надежное оборудование"
+			description: "Системы безопасности",
 		},
 		{
 			image: image3,
 			label: "Материалы для прокладки кабеля",
 			category: "Материалы для прокладки кабеля",
-			description: "Надежное оборудование"
+			description: "Надежное оборудование",
+
 		}
 
 	], []);

@@ -35,7 +35,15 @@
 	flex-direction: column;
 	gap: 3px;
  }
+
+ .contact-item > a {
+	transition: color 0.2s;
+ }
  
+ .contact-item > a:hover {
+	color: #666666;
+ }
+
  .contact-label {
 	color: #2a9e44;
 	font-size: 18px;

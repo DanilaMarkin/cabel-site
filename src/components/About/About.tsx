@@ -51,8 +51,8 @@ export default function About() {
           <div className={styles.contacts}>
             <p><strong>Адрес:</strong> ООО «ГК ПРОММЕДЬ»
 Ул. Кравченко дом 12 , офис 11</p>
-            <p><strong>Телефон:</strong> +7 (968) 462-73-64</p>
-            <p><strong>Email:</strong> prommedi@mail.ru</p>
+            <p><strong>Телефон:</strong> <a href="tel:+7(999)999-999" className={styles.link}>+7 (968) 462-73-64</a> </p>
+            <p><strong>Email:</strong> <a href="mailto:prommedi@mail.ru" className={styles.link}>prommedi@mail.ru</a> </p>
             <p><strong>Режим работы:</strong> Пн-Пт: 9:00 - 18:00</p>
           </div>
         </section>

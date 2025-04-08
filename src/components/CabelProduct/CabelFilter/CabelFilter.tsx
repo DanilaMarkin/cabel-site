@@ -92,37 +92,37 @@ const CabelFilter: React.FC = () => {
             image: '/img/CabelCatalog/image13.png',
             label: "Кабель",
             category: "Кабель",
-            description: "Широкий выбор кабельной продукции"
+            description: "Широкий выбор кабельной продукции",
         },
         {
             image: '/img/CabelCatalog/image-11.jpg',
             label: "Провод",
             category: "Провод",
-            description: "Провода различного сечения"
+            description: "Провода различного сечения",
         },
         {
             image: '/img/CabelCatalog/image1.png',
             label: "Свет",
             category: "Свет",
-            description: "Осветительные приборы"
+            description: "Осветительные приборы",
         },
         {
             image: '/img/CabelCatalog/image.jpg',
             label: "Низковольтное оборудование",
             category: "Низковольтное оборудование",
-            description: "Надежное оборудование"
+            description: "Надежное оборудование",
         },
         {
             image: '/img/CabelCatalog/image2.png',
             label: "Системы безопасности",
             category: "Системы безопасности",
-            description: "Надежное оборудование"
+            description: "Надежное оборудование",
         },
         {
             image: '/img/CabelCatalog/image3.png',
             label: "Материалы для прокладки кабеля",
             category: "Материалы для прокладки кабеля",
-            description: "Надежное оборудование"
+            description: "Надежное оборудование",
         }
     ], []);
 

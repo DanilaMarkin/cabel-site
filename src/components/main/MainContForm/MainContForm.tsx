@@ -34,17 +34,15 @@ export default function MainContForm() {
   };
 
   const data = {
-    adress: {
-      label: "Адрес",
-      text: "ООО «ГК ПРОММЕДЬ»\nУл. Кравченко, дом 12, офис 11",
-    },
     email: {
       label: "Email",
       text: "prommedi@mail.ru",
+      href: "mailto:prommedi@mail.ru"
     },
     telephone: {
       label: "Телефон",
       text: "+7 (968) 462-73-64",
+      href: "tel:+7(968)4627364"
     },
   };
 
@@ -56,10 +54,17 @@ export default function MainContForm() {
           <div className="contact-info">
             <h2 className="contact-title">КОНТАКТЫ</h2>
             <div className="contact-details">
+              <div className="contact-item">
+                <h3 className="contact-label">Адрес</h3>
+                <span className="contact-text">
+                  ООО «ГК ПРОММЕДЬ»
+                  Ул. Кравченко, дом 12, офис 11
+                </span>
+              </div>
               {Object.values(data).map((e, index) => (
                 <div className="contact-item" key={index}>
                   <h3 className="contact-label">{e.label}</h3>
-                  <span className="contact-text">{e.text}</span>
+                  <a href={e.href} className="contact-text">{e.text}</a>
                 </div>
               ))}
               <div className="contact-icons">
