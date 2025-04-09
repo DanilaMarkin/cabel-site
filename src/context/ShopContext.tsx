@@ -55,6 +55,8 @@ export interface ShopContextType {
     currentPage: number;
     totalPages: number;
     fetchFilteredProducts: (options: FilterOptions, page?: number) => void;
+    activeCategory: string | null;
+    setActiveCategory: (category: string | null) => void;
     products: Product[];
 }
 
@@ -89,6 +91,15 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
 
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [totalPages, setTotalPages] = useState<number>(1);
+
+    const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+    useEffect(() => {
+        const storedCategory = localStorage.getItem('selectedCategory');
+        if (storedCategory) {
+            setActiveCategory(storedCategory);
+        }
+    }, []);
 
     // Состояние для фильтров и отфильтрованных товаров
     const [filterOptions, setFilterOptions] = useState<FilterOptions>({
@@ -510,6 +521,8 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
                 currentPage,
                 totalPages,
                 fetchFilteredProducts,
+                activeCategory,
+                setActiveCategory,
                 products
             }}
         >

@@ -2,7 +2,7 @@ import { useShop } from '../../../context/ShopContext';
 import styles from './CabelCatalog.module.css';
 import { CategoryData } from '../../../types/shop.types';
 import PageTitle from '../../PageTitle/PageTitle';
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 
 // Импорт изображений
 import cabelImage from '/img/CabelCatalog/image13.png';
@@ -13,8 +13,9 @@ import image2 from '/img/CabelCatalog/image2.png';
 import image3 from '/img/CabelCatalog/image3.png';
 
 export default function CabelCatalog() {
-	const { resetFilters, updateFilter, applyFilters } = useShop();
+	const { resetFilters, updateFilter, applyFilters, setActiveCategory } = useShop();
 
+	// Переменная для хранения состояние выбранной категории
 	const categories = useMemo<CategoryData[]>(() => [
 		{
 			image: cabelImage,
@@ -61,6 +62,7 @@ export default function CabelCatalog() {
 		updateFilter('category', category);
 		updateFilter('maxPrice', 20000);
 		localStorage.setItem('selectedCategory', category);
+		setActiveCategory(category);
 		const filterSection = document.getElementById('filter-section');
 		if (filterSection) {
 			filterSection.scrollIntoView({
@@ -73,9 +75,9 @@ export default function CabelCatalog() {
 
 	return (
 		<div className={styles.cabel}>
-			<PageTitle title="Кабельная продукция" />
+			<PageTitle title="Каталог товаров" />
 			<h2 className={styles.sectionTitle}>
-				Кабельная продукция
+				Каталог товаров
 			</h2>
 			<div className={styles.products}>
 				{categories.map((category, index) => (

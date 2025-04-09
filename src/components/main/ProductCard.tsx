@@ -57,7 +57,7 @@ export default function ProductCard({imagesrc, label, text, cost}: Props) {
 				description: text, 
 				price: prodcost,
 				article: productId,
-				brand: 'КабельОпт',
+				brand: 'Проммедь',
 				deliveryInfo: "Доставка осуществляется по всей России. Оплата при получении или онлайн на сайте."
 			} 
 		});

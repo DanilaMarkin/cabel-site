@@ -26,14 +26,14 @@ const SEO: React.FC<SEOProps> = ({
   useEffect(() => {
     // Установка title
     if (title) {
-      document.title = `${title} | КабельОпт`;
+      document.title = `${title} | Проммедь`;
     }
 
     // Управление метатегами
     const metaTags = {
       description,
       keywords,
-      'og:title': title ? `${title} | КабельОпт` : 'КабельОпт - Интернет-магазин кабельной продукции',
+      'og:title': title ? `${title} | Проммедь` : 'Проммедь - Интернет-магазин кабельной продукции',
       'og:description': description,
       'og:image': ogImage,
       'og:type': ogType,
@@ -41,7 +41,7 @@ const SEO: React.FC<SEOProps> = ({
       'robots': noindex ? 'noindex, nofollow' : 'index, follow',
       'twitter:card': twitterCard,
       'twitter:site': twitterSite,
-      'twitter:title': title ? `${title} | КабельОпт` : 'КабельОпт - Интернет-магазин кабельной продукции',
+      'twitter:title': title ? `${title} | Проммедь` : 'Проммедь - Интернет-магазин кабельной продукции',
       'twitter:description': description,
       'twitter:image': ogImage
     };

@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useMemo } from 'react';
+import { useRef, useState, useEffect, useMemo, act } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useShop } from '../../../context/ShopContext';
 import { Product, CategoryData, AnimationConfig, SortType } from '../../../types/shop.types';
@@ -31,6 +31,7 @@ const CabelFilter: React.FC = () => {
         applyFilters,
         currentPage,
         totalPages,
+        activeCategory,
         fetchFilteredProducts
     } = useShop();
 
@@ -217,7 +218,7 @@ const CabelFilter: React.FC = () => {
                 description: product.text || `Подробное описание товара ${product.name}. Характеристики и технические данные.`,
                 price: prodcost,
                 article: product.id,
-                brand: 'КабельОпт',
+                brand: 'Проммедь',
                 deliveryInfo: "Доставка осуществляется по всей России. Оплата при получении или онлайн на сайте."
             }
         });
@@ -295,6 +296,8 @@ const CabelFilter: React.FC = () => {
         }
     }, [selectedCategory]);
 
+ 
+
     return (
         <div className={styles.filter}>
             {selectedCategory && (
@@ -307,7 +310,7 @@ const CabelFilter: React.FC = () => {
                 {selectedCategory && (
                     <>
                         <span className={styles.breadcrumbSeparator}>/</span>
-                        <span className={styles.breadcrumbCurrent}>{selectedCategory}</span>
+                        <span className={styles.breadcrumbCurrent}>{activeCategory}</span>
                     </>
                 )}
             </div>
@@ -317,7 +320,7 @@ const CabelFilter: React.FC = () => {
             </div>
 
             <div id="filter-section" className={styles.filter_title} ref={filterSectionRef}>
-                <h2>{selectedCategory ? `Товары категории "${selectedCategory}"` : 'Все товары'}</h2>
+                <h2>{selectedCategory ? `Товары категории "${activeCategory}"` : 'Все товары'}</h2>
                 <div className={styles.sortAndSearch}>
                     <form className={styles.searchBox} onSubmit={handleSearchSubmit}>
                         <input

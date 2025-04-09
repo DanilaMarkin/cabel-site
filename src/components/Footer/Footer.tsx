@@ -30,8 +30,8 @@ export default function Footer() {
             <ul className={styles.nav_list}>
               <li><Link to="/offer">Договор публичной оферты</Link></li>
               <li><Link to="/contacts">Контакты</Link></li>
-              <li><Link to="/payment">Оплата</Link></li>
-              <li><Link to="/return">Возврат</Link></li>
+              <li><Link to="/delivery">Оплата и доставка</Link></li>
+              {/* <li><Link to="/return">Возврат</Link></li> */}
             </ul>
           </nav>
 

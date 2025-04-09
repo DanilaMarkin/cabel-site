@@ -12,7 +12,7 @@ export default function SubHeader() {
       <div className={styles.navigation}>
         <Link to="/about" className={styles.navLink}>О компании</Link>
         <Link to="/buyers" className={styles.navLink}>Покупателям</Link>
-        <Link to="/delivery" className={styles.navLink}>Оплата и доставка</Link>
+        <Link to="/delivery" className={styles.navLink}>О</Link>
         <Link to="/contacts" className={styles.navLink}>Контакты</Link>
       </div>
       <div className={styles.rightSection}>

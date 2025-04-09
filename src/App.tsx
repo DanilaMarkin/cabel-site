@@ -41,7 +41,7 @@ function RouteChangeObserver({ children }: { children: React.ReactNode }) {
 		window.scrollTo(0, 0);
 		
 		// Устанавливаем baseTitle для каждой страницы
-		const baseTitle = "КабельОпт";
+		const baseTitle = "Проммедь";
 		switch (location.pathname) {
 			case "/":
 				document.title = `Главная | ${baseTitle}`;
@@ -118,7 +118,7 @@ function AppLayout() {
 function App() {
 	return (
 		<HelmetProvider>
-			<PageTitleProvider defaultTitle="Интернет-магазин кабельной продукции" defaultSuffix="КабельОпт">
+			<PageTitleProvider defaultTitle="Интернет-магазин кабельной продукции" defaultSuffix="Проммедь">
 				<Router>
 					<ShopProvider>
 						<AppLayout />

@@ -107,7 +107,7 @@ export default function ProductPage() {
                     description: productInfo.text || `Подробное описание товара ${productInfo.name}. Характеристики и технические данные.`,
                     price: productInfo.cost,
                     article: productInfo.article || 'Н/Д',
-                    brand: 'КабельОпт',
+                    brand: 'Проммедь',
                     deliveryInfo: "Доставка осуществляется по всей России. Оплата при получении или онлайн на сайте.",
                     productImage: productInfo.image,
                     features: productInfo.features || []
@@ -384,7 +384,7 @@ export default function ProductPage() {
                                                 description: product.text || `Подробное описание товара ${product.title}. Характеристики и технические данные будут доступны в ближайшее время.`,
                                                 price: product.price,
                                                 article: product.article || 'Н/Д',
-                                                brand: product.manufacturer || 'КабельОпт',
+                                                brand: product.manufacturer || 'Проммедь',
                                                 deliveryInfo: "Доставка осуществляется по всей России. Оплата при получении или онлайн на сайте."
                                             }}
                                             className={styles.detailsButton}

@@ -36,7 +36,7 @@ export const Burger = () => {
       <div className={`${styles.menu} ${isOpen ? styles.active : ''}`}>
         <div className={styles.menuHeader}>
           <Link to="/" className={styles.logo} onClick={toggleMenu}>
-            КабельОпт
+            Проммедь
           </Link>
           <button 
             className={styles.closeButton}
@@ -77,7 +77,6 @@ export const Burger = () => {
             <ul>
               <li><Link to="/catalog" onClick={toggleMenu}>Все товары</Link></li>
               <li><Link to="/catalog/cable" onClick={toggleMenu}>Кабельная продукция</Link></li>
-              <li><Link to="/catalog/accessories" onClick={toggleMenu}>Аксессуары</Link></li>
             </ul>
           </div>
 
@@ -85,7 +84,7 @@ export const Burger = () => {
             <h3>Информация</h3>
             <ul>
               <li><Link to="/about" onClick={toggleMenu}>О компании</Link></li>
-              <li><Link to="/delivery" onClick={toggleMenu}>Доставка</Link></li>
+              <li><Link to="/delivery" onClick={toggleMenu}>О</Link></li>
               <li><Link to="/contacts" onClick={toggleMenu}>Контакты</Link></li>
             </ul>
           </div>

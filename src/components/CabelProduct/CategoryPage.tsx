@@ -10,7 +10,7 @@ export default function CategoryPage() {
         <div className={styles.cabelProduct}>
             <SEO 
                 title={`Категория: ${decodedCategory}`}
-                description={`Товары категории ${decodedCategory} в интернет-магазине КабельОпт. Большой выбор продукции, выгодные цены, доставка по всей России.`}
+                description={`Товары категории ${decodedCategory} в интернет-магазине Проммедь. Большой выбор продукции, выгодные цены, доставка по всей России.`}
                 keywords={`${decodedCategory}, купить ${decodedCategory}, цена ${decodedCategory}, ${decodedCategory} оптом`}
             />
             <CabelFilter />
